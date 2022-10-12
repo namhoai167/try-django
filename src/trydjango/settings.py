@@ -25,7 +25,7 @@ SECRET_KEY = '2@@mnmn#=yeh_%0g!h-6bpbu4!j690@klk#srz2arhh7hmaq84'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'trydjango',
-        'USER': 'trydjango_admin',
-        'PASSWORD': 'trydjangopasswd',
-        'HOST': 'localhost',
+        'NAME': os.environ.get('POSTGRESQL_DATABASE'),
+        'USER': os.environ.get('POSTGRESQL_USERNAME'),
+        'PASSWORD': os.environ.get('POSTGRESQL_PASSWORD'),
+        'HOST': 'db',
         'PORT': '',
     }
 }
