@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # our
     'products',
+    'api',
 ]
 
 MIDDLEWARE = [
