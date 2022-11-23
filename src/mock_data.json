@@ -1,0 +1,203 @@
+[
+    {
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name":"Mobile phone",
+            "slug":"mobile-phone"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name":"Laptop",
+            "slug":"laptop"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name":"Tablet",
+            "slug":"tablet"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 4,
+        "fields": {
+            "name":"Smartwatch",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 1,
+        "fields": {
+            "name":"Samsung",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 2,
+        "fields": {
+            "name":"Apple",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 3,
+        "fields": {
+            "name":"Xiaomi",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 4,
+        "fields": {
+            "name":"Acer",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 5,
+        "fields": {
+            "name":"Lenovo",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 6,
+        "fields": {
+            "name":"HP",
+            "slug":"smartwatch"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "category":[1],
+            "manufacturer":1,
+            "name":"Samsung Galaxy Z Flip4 5G",
+            "price":8789.98,
+            "slug":"samsumg-galaxy-z-flip4",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "category":[1],
+            "manufacturer":2,
+            "name":"IPhone 11",
+            "price":3582.07,
+            "slug":"iphone-11",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "category":[1],
+            "manufacturer":3,
+            "name":"Xiaomi Readmi Note 11",
+            "price":1651.46,
+            "slug":"xiaomi-redmi-note-11",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "category":[2],
+            "manufacturer":4,
+            "name":"Acer TravelMate B3 TMB311 31 P49D",
+            "price":9398.71,
+            "slug":"acer-travelmate-b3",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "category":[2],
+            "manufacturer":5,
+            "name":"Lenovo Ideapad 3 15ITL6",
+            "price":2698.08,
+            "slug":"lenovo-ideapad-3",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "category":[2],
+            "manufacturer":2,
+            "name":"Macbook Air M1 2020",
+            "price":3980.94,
+            "slug":"macbook-air-m1",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+           "category":[2],
+           "manufacturer":6,
+           "name":"HP 340s G7 240Q4PA",
+           "price":4222.41,
+           "slug":"hp-340s-g7",
+           "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "id":8,
+            "category":[3],
+            "manufacturer":1,
+            "name":"Samsung Galaxy Tab A7",
+            "price":4436.53,
+            "slug":"samsumg-galaxy-tab-a7",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "category":[3],
+            "manufacturer":2,
+            "name":"Ipad Pro M1 11 inch 5G",
+            "price":3387.68,
+            "slug":"ipad-pro-m1-11-inch",
+            "description":null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "category":[4],
+            "manufacturer":1,
+            "name":"Samsung Galaxy Watch 4",
+            "price":7278.32,
+            "slug":"samsumg-galaxy-watch",
+            "description":null
+        }
+    }
+]
