@@ -1,4 +1,7 @@
+# TODO Migrate to Router and Queryset
+
 from django.urls import path
+
 from .views import (
     ProductList,
     ProductDetail,

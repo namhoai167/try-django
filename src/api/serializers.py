@@ -5,6 +5,15 @@ from products.models import (
 )
 
 class ProductSerializer(serializers.ModelSerializer):
+    category = serializers.SerializerMethodField('get_category')
+    manufacturer = serializers.SerializerMethodField('get_manufacturer')
+
+    def get_category(self, obj):
+        return [cate.name for cate in obj.category.all()]
+
+    def get_manufacturer(self, obj):
+        return obj.manufacturer.name
+
     class Meta:
         model = Product
         fields = (
@@ -13,6 +22,5 @@ class ProductSerializer(serializers.ModelSerializer):
             'manufacturer',
             'name',
             'description',
-            'price',
-            'get_absolute_url',
+            'price'
         )
