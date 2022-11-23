@@ -9,8 +9,18 @@ from .serializers import ProductSerializer
 
 # Create your views here.
 class ProductList(APIView):
+
     def get(self, request):
-        products = Product.objects.all()
+        category = request.query_params.get('category')
+        manufacturer = request.query_params.get('manufacturer')
+        if category is not None and manufacturer is not None:
+            products = Product.objects.filter(category__name=category, manufacturer__name=manufacturer)
+        elif category is not None and manufacturer is None:
+            products = Product.objects.filter(category__name=category)
+        elif category is None and manufacturer is not None:
+            products = Product.objects.filter(manufacturer__name=manufacturer)
+        else:
+            products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
