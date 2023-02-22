@@ -3,6 +3,7 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from drf_spectacular.utils import extend_schema
 
 from products.models import Product
 from .serializers import ProductSerializer
@@ -44,6 +45,10 @@ class ProductDetail(APIView):
         serializer = ProductSerializer(product)
         return Response(serializer.data)
 
+    @extend_schema(
+        request=ProductSerializer,
+        responses={200: ProductSerializer},
+    )
     def put(self, request, id):
         product = self.get_object(id)
         serializer = ProductSerializer(product, data=request.data)

@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+from dotenv import load_dotenv
+load_dotenv()
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2@@mnmn#=yeh_%0g!h-6bpbu4!j690@klk#srz2arhh7hmaq84'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,11 +49,27 @@ INSTALLED_APPS = [
     # third party
     'rest_framework',
     'corsheaders',
+    'drf_spectacular',
 
     # our
     'products',
     'api',
 ]
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Products API',
+    'DESCRIPTION': 'API for list of products and a product',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+    # Split components into request and response parts where appropriate
+    'COMPONENT_SPLIT_REQUEST': False,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -94,8 +112,8 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRESQL_DATABASE'),
         'USER': os.environ.get('POSTGRESQL_USERNAME'),
         'PASSWORD': os.environ.get('POSTGRESQL_PASSWORD'),
-        'HOST': 'db',
-        'PORT': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
